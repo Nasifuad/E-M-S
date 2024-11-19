@@ -7,18 +7,20 @@ import { AuthContext } from "./context/AuthContext";
 // import { GetLocalStorage, SetLocalStorage } from "./localStorage/LocalStorage";
 
 function App() {
-  let [user, userName] = useState("");
-
+  let [user, userName] = useState(null);
   const AuthData = useContext(AuthContext);
-  console.log(AuthData);
+  function checkEmail(email) {
+    const emailAdd = AuthData.find((user) => user.email === email);
+    if (emailAdd) return userName(emailAdd.role);
+  }
+  function checkPass(pass) {
+    const password = AuthData.find((user) => user.password === pass);
+    if (password) return userName(password.role);
+  }
   const handleLogin = (email, password) => {
-    if (email === "admin@example.com" && password === "123") {
-      userName("admin");
-    } else if (email === "user@example.com" && password === "123") {
-      userName("employee");
-    } else {
-      alert("Invalid email or password");
-    }
+    const emailAdd = checkEmail(email);
+    const pass = checkPass(password);
+    if (emailAdd && pass) userName("admin");
   };
 
   return (
