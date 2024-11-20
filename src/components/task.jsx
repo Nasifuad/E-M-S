@@ -28,10 +28,10 @@ const Task = ({ userData }) => {
           return (
             <div
               key={task}
-              className="card1 h-1/2  bg-red-500 w-1/4  text-center p-10 flex flex-col gap-5 text-white rounded-xl"
+              className="card1 h-1/2 bg-gradient-to-r from-indigo-500 to-indigo-600 w-1/4 min-w-[300px] text-center p-10 flex flex-col gap-5 text-white rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
             >
-              <p className="text-3xl font-bold ">{task} </p>
-              <p className="text-3xl font-bold ">0</p>
+              <p className="text-3xl font-extrabold tracking-wider">{task}</p>
+              <p className="text-4xl font-extrabold">0</p>
             </div>
           );
         })}
