@@ -1,9 +1,10 @@
 import Head from "../others/head";
 
-const EmployeeDashboard = () => {
+// eslint-disable-next-line react/prop-types
+const EmployeeDashboard = ({ userName }) => {
   return (
     <div className="h-screen w-full bg-slate-800 flex flex-col gap-5">
-      <Head pageName="Employee Dashboard" />
+      <Head pageName="Employee Dashboard" userName={userName} />
       <div className="body flex gap-3 p-3 bg-slate-700 rounded-xl justify-between wrap ">
         <div className="card1 bg-red-500 w-1/4  text-center p-10 flex flex-col gap-5 text-white rounded-xl">
           <p className="text-3xl font-bold ">New task </p>

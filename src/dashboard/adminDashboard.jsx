@@ -3,7 +3,7 @@ import Head from "../others/head";
 const AdminDashboard = () => {
   return (
     <div className="h-screen w-full bg-slate-800 flex flex-col gap-5">
-      <Head pageName="Admin Dashboard" />
+      <Head pageName="Admin Dashboard" userName="admin" />
 
       <div className="body flex flex-col gap-3 p-3 bg-slate-700 rounded-xl justify-center  items-center h-screen ">
         <h1 className="text-3xl font-bold text-white">Task Creation Form</h1>
