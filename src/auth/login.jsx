@@ -5,6 +5,7 @@ import Head from "../others/head";
 const Login = ({ handleLogin }) => {
   let [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     handleLogin(email, password);

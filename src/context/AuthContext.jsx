@@ -1,18 +1,17 @@
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
 import { GetLocalStorage, SetLocalStorage } from "../localStorage/LocalStorage";
-// import { getLocalStorage, setLocalStorage } from "../utils/localStorage";
 
-// export const AuthContext = createContext();
+// eslint-disable-next-line react-refresh/only-export-components
 export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
-  // localStorage.clear()
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     SetLocalStorage();
     const { employees } = GetLocalStorage();
     setUserData(employees);
+    console.log("Test from Auth Context");
   }, []);
 
   return (

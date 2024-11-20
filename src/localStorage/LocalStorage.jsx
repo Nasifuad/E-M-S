@@ -61,29 +61,12 @@ const employees = [
     ],
   },
 ];
-const admin = [
-  {
-    id: 101,
-    name: "Admin User",
-    email: "admin@example.com",
-    role: "Administrator",
-    permissions: [
-      "manage_users",
-      "assign_tasks",
-      "generate_reports",
-      "view_all_data",
-      "manage_settings",
-    ],
-  },
-];
 
 export const SetLocalStorage = () => {
   localStorage.setItem("employees", JSON.stringify(employees));
-  localStorage.setItem("admin", JSON.stringify(admin));
 };
 export const GetLocalStorage = () => {
   const employees = JSON.parse(localStorage.getItem("employees"));
-  // const admin = JSON.parse(localStorage.getItem("admin"));
 
   return { employees };
 };

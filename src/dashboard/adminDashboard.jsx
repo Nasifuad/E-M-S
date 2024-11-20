@@ -7,7 +7,7 @@ const AdminDashboard = () => {
 
       <div className="body flex flex-col gap-3 p-3 bg-slate-700 rounded-xl justify-center  items-center h-screen ">
         <h1 className="text-3xl font-bold text-white">Task Creation Form</h1>
-        <form className="bg-slate-600 p-5 rounded-xl flex flex-col gap-3 w-1/3">
+        <form className="bg-slate-600 p-5 rounded-xl flex flex-col gap-3 w-1/3 min-w-[300px]">
           <div className="taskName  flex flex-col gap-1">
             <p className="text-xl text-center text-white ">Task Name</p>
             <input
