@@ -9,7 +9,7 @@ const Head = ({ pageName, userName }) => {
       setName(userName);
     }
   }, [userName]);
-  console.log(userName);
+  console.log("This is", userName);
   // setName(userName);
   return (
     <>

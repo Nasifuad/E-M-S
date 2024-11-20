@@ -10,7 +10,7 @@ function App() {
   let [userName, setUserName] = useState("");
   //getting data from context provider by AuthContext
   const AuthData = useContext(AuthContext);
-  // console.log("This is", AuthData);
+  console.log("This is", AuthData);
   const handleLogin = (email, password) => {
     if (email === "admin@example.com" && password === "123") {
       setUser("admin");
