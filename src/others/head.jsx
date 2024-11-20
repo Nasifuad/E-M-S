@@ -1,16 +1,10 @@
 import { useEffect, useState } from "react";
 
 // eslint-disable-next-line react/prop-types
-const Head = ({ pageName, userName }) => {
-  let [name, setName] = useState("");
+const Head = ({ pageName, userData }) => {
+  let [name, setName] = useState("employee");
+  console.log(userData);
 
-  useEffect(() => {
-    if (userName) {
-      setName(userName);
-    }
-  }, [userName]);
-  console.log("This is", userName);
-  // setName(userName);
   return (
     <>
       <div className="header flex justify-between bg-slate-600 p-10 items-center">

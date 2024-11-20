@@ -7,10 +7,18 @@ import { AuthContext } from "./context/AuthContext";
 function App() {
   //stores user name
   let [user, setUser] = useState("");
-  let [userName, setUserName] = useState("");
+  let [userData, setUserData] = useState({
+    name: "employee",
+    email: "employee@example.com",
+    password: "123",
+    tasks: [],
+  });
+  console.log("User data test", userData);
   //getting data from context provider by AuthContext
   const AuthData = useContext(AuthContext);
-  console.log("This is", AuthData);
+  // const [adminData, setAdminData] = AuthData;
+  console.log("AuthData for test", AuthData);
+  // console.log("adminData for test", adminData);
   const handleLogin = (email, password) => {
     if (email === "admin@example.com" && password === "123") {
       setUser("admin");
@@ -21,14 +29,14 @@ function App() {
       }
     });
     setUser("employee");
-    setUserName(Info[0].name);
+    setUserData(Info);
   };
 
   return (
     <>
       {!user ? <Login handleLogin={handleLogin} /> : ""}
       {user === "admin" ? <AdminDashboard /> : ""}
-      {user === "employee" ? <EmployeeDashboard userName={userName} /> : ""}
+      {user === "employee" ? <EmployeeDashboard userData={userData} /> : ""}
     </>
   );
 }

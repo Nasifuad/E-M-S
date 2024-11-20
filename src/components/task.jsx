@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 const Task = () => {
+  const [Task, setTask] = useState("second");
   return (
     <div>
       <div className="h-screen w-full bg-slate-800 flex flex-col gap-5">
