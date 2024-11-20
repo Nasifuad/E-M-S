@@ -11,13 +11,17 @@ function App() {
   const AuthData = useContext(AuthContext);
   // console.log("This is", AuthData);
   const handleLogin = (email, password) => {
+    if (email === "admin@example.com" && password === "123") {
+      setUserName("admin");
+    }
     const Info = AuthData.filter((data) => {
       if (data.email === email && data.password === password) {
         return data;
       }
     });
+    setUserName("employee");
     console.log(Info[0].name);
-    setUserName(Info[0].name);
+    // setUserName(Info[0].name);
     console.log(Info);
     console.log(user);
   };
@@ -25,7 +29,7 @@ function App() {
   return (
     <>
       {!user ? <Login handleLogin={handleLogin} /> : ""}
-      {user === "Alice Johnson" ? <AdminDashboard /> : ""}
+      {user === "admin" ? <AdminDashboard /> : ""}
       {user === "employee" ? <EmployeeDashboard /> : ""}
     </>
   );

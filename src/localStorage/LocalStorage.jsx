@@ -16,6 +16,7 @@ const employees = [
     id: 2,
     name: "Bob Smith",
     email: "bob.smith@example.com",
+    password: "123",
     tasks: [
       "Design homepage layout",
       "Fix CSS styling issues",
@@ -28,6 +29,7 @@ const employees = [
     id: 3,
     name: "Charlie Davis",
     email: "charlie.davis@example.com",
+    password: "123",
     tasks: [
       "Create database schema",
       "Write backend API for user authentication",
@@ -40,6 +42,7 @@ const employees = [
     id: 4,
     name: "Diana Lee",
     email: "diana.lee@example.com",
+    password: "123",
     tasks: [
       "Develop marketing strategy",
       "Run social media campaigns",
@@ -52,6 +55,7 @@ const employees = [
     id: 5,
     name: "Ethan Brown",
     email: "ethan.brown@example.com",
+    password: "123",
     tasks: [
       "Prepare sales pitch",
       "Identify potential leads",
