@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 // eslint-disable-next-line react/prop-types
 const Head = ({ pageName, userData }) => {
   let [name, setName] = useState("employee");
-  console.log(userData);
 
   return (
     <>

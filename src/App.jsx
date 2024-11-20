@@ -13,23 +13,55 @@ function App() {
     password: "123",
     tasks: [],
   });
-  console.log("User data test", userData);
-  //getting data from context provider by AuthContext
+  let [adminData, setAdminData] = useState({
+    name: "employee",
+    email: "employee@example.com",
+    password: "123",
+    tasks: [],
+  });
+
   const AuthData = useContext(AuthContext);
-  // const [adminData, setAdminData] = AuthData;
-  console.log("AuthData for test", AuthData);
-  // console.log("adminData for test", adminData);
+  const admins = AuthData.adminData;
+  const employees = AuthData.userData;
+  console.log("data for", admins, employees);
+  console.log(AuthData);
+  // const handleLogin = (email, password) => {
+  //   if (email === "admin@example.com" && password === "123") {
+  //     setUser("admin");
+  //   }
+  //   const Info = employees.filter((data) => {
+  //     if (data.email === email && data.password === password) {
+  //       return data;
+  //     }
+  //   });
+  //   setUser("employee");
+  //   setUserData(Info);
+  // };
   const handleLogin = (email, password) => {
-    if (email === "admin@example.com" && password === "123") {
+    // Check if the user is an admin
+    const adminInfo = admins.find(
+      (data) => data.email === email && data.password === password
+    );
+    console.log(adminInfo);
+    if (adminInfo) {
       setUser("admin");
+      setAdminData(adminInfo);
+      return;
     }
-    const Info = AuthData.filter((data) => {
-      if (data.email === email && data.password === password) {
-        return data;
-      }
-    });
-    setUser("employee");
-    setUserData(Info);
+
+    // Check if the user is an employee
+    const employeeInfo = employees.find(
+      (data) => data.email === email && data.password === password
+    );
+    console.log(employeeInfo);
+    if (employeeInfo) {
+      setUser("employee");
+      setUserData(employeeInfo);
+      return;
+    }
+
+    // If no match is found
+    console.log("Invalid login credentials");
   };
 
   return (
