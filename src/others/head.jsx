@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // eslint-disable-next-line react/prop-types
-const Head = ({ pageName, userData }) => {
-  let [name, setName] = useState("employee");
+const Head = ({ pageName, userName }) => {
+  let [name] = useState(userName);
 
   return (
     <>

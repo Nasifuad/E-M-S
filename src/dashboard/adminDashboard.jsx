@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 import Head from "../others/head";
 
-const AdminDashboard = () => {
+// eslint-disable-next-line react/prop-types
+const AdminDashboard = ({ adminData }) => {
   return (
     <div className="h-screen w-full bg-slate-800 flex flex-col gap-5">
-      <Head pageName="Admin Dashboard" userName="admin" />
+      <Head pageName="Admin Dashboard" userName={adminData.name} />
 
       <div className="body flex flex-col gap-3 p-3 bg-slate-700 rounded-xl justify-center  items-center h-screen ">
         <h1 className="text-3xl font-bold text-white">Task Creation Form</h1>

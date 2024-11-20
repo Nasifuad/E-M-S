@@ -23,22 +23,8 @@ function App() {
   const AuthData = useContext(AuthContext);
   const admins = AuthData.adminData;
   const employees = AuthData.userData;
-  console.log("data for", admins, employees);
-  console.log(AuthData);
-  // const handleLogin = (email, password) => {
-  //   if (email === "admin@example.com" && password === "123") {
-  //     setUser("admin");
-  //   }
-  //   const Info = employees.filter((data) => {
-  //     if (data.email === email && data.password === password) {
-  //       return data;
-  //     }
-  //   });
-  //   setUser("employee");
-  //   setUserData(Info);
-  // };
+
   const handleLogin = (email, password) => {
-    // Check if the user is an admin
     const adminInfo = admins.find(
       (data) => data.email === email && data.password === password
     );
@@ -49,7 +35,6 @@ function App() {
       return;
     }
 
-    // Check if the user is an employee
     const employeeInfo = employees.find(
       (data) => data.email === email && data.password === password
     );
@@ -60,14 +45,13 @@ function App() {
       return;
     }
 
-    // If no match is found
     console.log("Invalid login credentials");
   };
 
   return (
     <>
       {!user ? <Login handleLogin={handleLogin} /> : ""}
-      {user === "admin" ? <AdminDashboard /> : ""}
+      {user === "admin" ? <AdminDashboard adminData={adminData} /> : ""}
       {user === "employee" ? <EmployeeDashboard userData={userData} /> : ""}
     </>
   );
