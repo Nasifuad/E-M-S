@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // eslint-disable-next-line react/prop-types
 const Head = ({ pageName, userName }) => {
-  let [name] = useState(userName);
+  let [name, setName] = useState("User");
+  useEffect(() => {
+    if (userName) {
+      setName(userName);
+    }
+  }, [userName]);
 
   return (
     <>
