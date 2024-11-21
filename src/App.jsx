@@ -3,6 +3,7 @@ import Login from "./auth/login";
 import AdminDashboard from "./dashboard/adminDashboard";
 import EmployeeDashboard from "./dashboard/EmployeeDashboard";
 import { AuthContext } from "./context/AuthContext";
+import Home from "./LandingPage/Home";
 
 function App() {
   //stores user name
@@ -50,6 +51,7 @@ function App() {
 
   return (
     <>
+      <Home />
       {!user ? <Login handleLogin={handleLogin} /> : ""}
       {user === "admin" ? <AdminDashboard adminData={adminData} /> : ""}
       {user === "employee" ? <EmployeeDashboard userData={userData} /> : ""}
